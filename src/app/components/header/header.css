@@ -1,0 +1,42 @@
+.dream-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #007bff, #17a2b8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.logo-text {
+  color: white;
+  font-weight: bold;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link.active {
+  color: #17a2b8 !important;
+  background-color: rgba(23, 162, 184, 0.1);
+  border-radius: 20px;
+  padding: 8px 16px !important;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.75) !important;
+  padding: 8px 16px !important;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #17a2b8 !important;
+  background-color: rgba(23, 162, 184, 0.1);
+}

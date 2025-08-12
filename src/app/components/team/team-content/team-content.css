@@ -1,0 +1,63 @@
+.team-content-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.content-text {
+  text-align: justify;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.content-text p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.content-actions {
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.btn-lg {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+}
+
+.btn-primary {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-primary:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+@media (max-width: 768px) {
+  .team-content-section {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .content-title {
+    font-size: 1.3rem;
+  }
+  
+  .content-text {
+    text-align: left;
+  }
+}

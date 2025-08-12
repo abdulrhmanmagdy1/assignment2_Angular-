@@ -1,0 +1,14 @@
+<div class="meal-card">
+  <div class="meal-image">
+    <img [src]="meal.image" [alt]="meal.name" class="card-img-top">
+    <div class="price-badge">${{ meal.price }}</div>
+  </div>
+  <div class="card-body">
+    <h5 class="meal-name">{{ meal.name }}</h5>
+    <p class="meal-description">{{ meal.description }}</p>
+    <div class="meal-actions">
+      <button class="btn btn-primary btn-sm">Order Now</button>
+      <span class="category-badge">{{ meal.category }}</span>
+    </div>
+  </div>
+</div>

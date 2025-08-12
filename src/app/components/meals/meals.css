@@ -1,0 +1,71 @@
+.meals-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.page-header {
+  background-color: #f8f9fa;
+  padding: 2rem 0 1rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+}
+
+.meals-navigation {
+  margin-bottom: 3rem;
+}
+
+.nav-pills-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.nav-pills .nav-link {
+  color: #666;
+  background-color: transparent;
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-pills .nav-link:hover {
+  color: #17a2b8;
+  border-color: #17a2b8;
+  background-color: rgba(23, 162, 184, 0.1);
+}
+
+.nav-pills .nav-link.active {
+  color: white;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.meals-grid {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .nav-pills .nav-link {
+    padding: 8px 16px;
+    margin: 2px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-pills-wrapper {
+    flex-wrap: wrap;
+  }
+}

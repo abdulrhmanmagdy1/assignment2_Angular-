@@ -1,0 +1,60 @@
+<div class="meals-page">
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-title">Meals</h1>
+    </div>
+  </div>
+
+  <div class="container py-4">
+    <div class="meals-navigation">
+      <div class="nav-pills-wrapper">
+        <div class="nav nav-pills justify-content-center" role="tablist">
+          <button
+            *ngFor="let category of categories"
+            type="button"
+            class="nav-link"
+            [class.active]="selectedCategory === category.id"
+            [disabled]="isLoading"
+            (click)="onCategoryChange(category.id)">
+            {{ category.name }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading meals...</span>
+      </div>
+      <p class="mt-3 text-muted">Loading delicious meals from API...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="errorMessage && !isLoading" class="alert alert-warning text-center" role="alert">
+      <i class="bi bi-exclamation-triangle me-2"></i>
+      {{ errorMessage }}
+      <button class="btn btn-primary btn-sm ms-3" (click)="loadMeals()">
+        <i class="bi bi-arrow-clockwise me-1"></i>
+        Retry
+      </button>
+    </div>
+
+    <!-- Meals Grid -->
+    <div class="meals-grid" *ngIf="!isLoading && !errorMessage">
+      <div class="row" *ngIf="meals.length > 0; else noMeals">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let meal of meals">
+          <app-meal-card [meal]="meal"></app-meal-card>
+        </div>
+      </div>
+
+      <ng-template #noMeals>
+        <div class="text-center py-5">
+          <i class="bi bi-search display-1 text-muted"></i>
+          <h3 class="text-muted mt-3">No meals found</h3>
+          <p class="text-muted">Try selecting a different category</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
