@@ -9,9 +9,18 @@ export const serverRoutes: ServerRoute[] = [
     path: 'recipe/:id',
     renderMode: RenderMode.Prerender,
     getPrerenderParams: async () => {
-      const response = await fetch('https://your-api-endpoint.com/recipes');
-      const recipes = await response.json();
-      return recipes.map((recipe: { id: string }) => ({ id: recipe.id }));
+      try {
+        const response = await fetch('https://forkify-api.herokuapp.com/api/search?q=chicken');
+        if (!response.ok) {
+          console.error('API returned an error:', response.statusText);
+          return [];
+        }
+        const recipes = await response.json();
+        return recipes.recipes.map((recipe: { recipe_id: string }) => ({ id: recipe.recipe_id }));
+      } catch (error) {
+        console.error('Error fetching recipes:', error);
+        return [];
+      }
     }
   }
 ];
