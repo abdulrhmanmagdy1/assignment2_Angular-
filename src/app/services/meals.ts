@@ -13,13 +13,13 @@ export class MealsService {
 
   // Different search terms for different meal categories (using valid Forkify API terms)
   private categorySearchTerms = {
-    breakfast: ['eggs', 'toast', 'butter', 'bread'],
-    lunch: ['pasta', 'pizza', 'chicken', 'rice'],
-    dinner: ['salmon', 'beef', 'pork', 'lamb'],
-    dessert: ['chocolate', 'cake', 'pie', 'cream']
+    breakfast: ['toast', 'pancakes', 'croissant', 'chocolate'],
+    lunch: ['salad', 'pizza', 'pasta', 'chicken'],
+    dinner: ['steak', 'fish', 'beef', 'lamb'],
+    dessert: ['cake', 'ice cream', 'donuts', 'chocolate']
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAllMeals(): Observable<Meal[]> {
     // Get meals from all categories
